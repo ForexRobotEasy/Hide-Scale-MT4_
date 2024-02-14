@@ -1,0 +1,33 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                              Hide Scale MT4      |
+//|                              https://forexroboteasy.com          |
+//|                                         Forex Robot Easy Team     |
+//+------------------------------------------------------------------+
+
+// Function to hide the scale value of price charts
+void HideScale()
+{
+    // Hide the scale value
+    ChartSetInteger(0, CHART_SHOW_PRICE_SCALE, false);
+}
+
+// Function to customize the display of scale values
+void CustomizeScaleDisplay(color textColor, string font, ENUM_ANCHOR_POINT anchorPoint)
+{
+    // Set color, font, and position of scale values
+    ChartSetInteger(0, CHART_COLOR_SCALE, textColor);
+    ChartSetString(0, CHART_FONT_SCALE, font);
+    ChartSetInteger(0, CHART_SCALE_Y_ANCHOR, anchorPoint);
+}
+
+// Main function
+void OnStart()
+{
+    // Hide the scale value
+    HideScale();
+    
+    // Customize the display of scale values
+    CustomizeScaleDisplay(clrBlue, 'Arial', ANCHOR_BOTTOM_RIGHT);
+}
+
